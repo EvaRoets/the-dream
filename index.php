@@ -34,7 +34,7 @@ declare(strict_types=1);
 <body>
 <h1>Currency converter</h1>
 <div class="converter">
-    <form action="index.php" method="get">
+    <form action="index.php" method="post">
         <label for="search"></label> </br>
         <b> Amount  </b> <input type="text" name="input" id="search" placeholder="Enter amount"/>
         <b> Currency  </b><select name="dropdown" id="currencyList">
@@ -210,15 +210,14 @@ declare(strict_types=1);
 </html>
 
 <?php
-
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
-if(isset($_GET["submit"]))
+if(isset($_POST["submit"])) // Check if a variable/form is declared/submitted and is different than null
 {
-    $cc_dropdown = $_GET["dropdown"];
-    $cc_input = $_GET["input"];
+    $cc_dropdown = $_POST["dropdown"];
+    $cc_input = $_POST["input"];
 
     if($cc_dropdown == "USD") {
         $output = $cc_input * 0.84784296;
@@ -239,6 +238,9 @@ if(isset($_GET["submit"]))
     else if ($cc_dropdown == "AFN")  {
         $output = $cc_input * 0.2309799;
         echo "<h2> €" . number_format($output) . "</h2>";
+    }
+    else {
+        echo "FAIL";
     }
 }
 ?>
