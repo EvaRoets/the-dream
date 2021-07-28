@@ -198,8 +198,7 @@ if(isset($_GET["submit"]))
 
     if($cc_dropdown == "USD") {
         $output = $cc_input * 0.84784296;
-        echo "<h1>" . ($output) . " Euro" . "</h1>";
-    }
+        echo "<h1>" . number_format($output) . " Euro" . "</h1>";    }
 
 
 
