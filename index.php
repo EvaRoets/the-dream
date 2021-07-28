@@ -36,7 +36,7 @@ declare(strict_types=1);
 <div class="converter">
     <form action="index.php" method="get">
         <label for="search"></label> </br>
-        <b> Amount  </b> <input type="text" name="input" id="search"/>
+        <b> Amount  </b> <input type="text" name="input" id="search" placeholder="Enter amount"/>
         <b> Currency  </b><select name="dropdown" id="currencyList">
             <option value="USD" selected="selected" label="US dollar">USD</option>
             <option value="JPY" label="Japanese yen">JPY</option>
@@ -222,6 +222,22 @@ if(isset($_GET["submit"]))
 
     if($cc_dropdown == "USD") {
         $output = $cc_input * 0.84784296;
+        echo "<h2> €" . number_format($output) . "</h2>";
+    }
+    else if ($cc_dropdown == "JPY")  {
+            $output = $cc_input * 0.007697308;
+            echo "<h2> €" . number_format($output) . "</h2>";
+    }
+    else if ($cc_dropdown == "GBP")  {
+        $output = $cc_input * 1.1756453;
+        echo "<h2> €" . number_format($output) . "</h2>";
+    }
+    else if ($cc_dropdown == "AED")  {
+        $output = $cc_input * 0.2309799;
+        echo "<h2> €" . number_format($output) . "</h2>";
+    }
+    else if ($cc_dropdown == "AFN")  {
+        $output = $cc_input * 0.2309799;
         echo "<h2> €" . number_format($output) . "</h2>";
     }
 }
