@@ -7,13 +7,37 @@ declare(strict_types=1);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>The Dream</title>
+    <style>
+        .converter{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            margin: 30px auto auto auto;
+        }
+        h1 {
+            display: flex;
+            justify-content: center;
+            background-color: black;
+            color: white;
+            padding: 50px;
+        }
+        h2 {
+            display: flex;
+            justify-content: center;
+        }
+        b{
+
+        }
+    </style>
 </head>
 <body>
+<h1>Currency converter</h1>
 <div class="converter">
     <form action="index.php" method="get">
-        <label for="search">Currency Converter</label>
-        <b> Amount </b> <input type="text" name="input" id="search"/>
-        <b> Currency </b><select name="dropdown" id="currencyList">
+        <label for="search"></label> </br>
+        <b> Amount  </b> <input type="text" name="input" id="search"/>
+        <b> Currency  </b><select name="dropdown" id="currencyList">
             <option value="USD" selected="selected" label="US dollar">USD</option>
             <option value="JPY" label="Japanese yen">JPY</option>
             <option value="GBP" label="Pound sterling">GBP</option>
@@ -198,12 +222,7 @@ if(isset($_GET["submit"]))
 
     if($cc_dropdown == "USD") {
         $output = $cc_input * 0.84784296;
-        echo "<h1>" . number_format($output) . " Euro" . "</h1>";    }
-
-
-
-
-
-
+        echo "<h2> €" . number_format($output) . "</h2>";
+    }
 }
 ?>
