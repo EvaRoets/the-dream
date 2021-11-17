@@ -8,13 +8,14 @@ declare(strict_types=1);
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>The Dream</title>
     <style>
-        .converter{
+        .converter {
             display: flex;
             align-items: center;
             justify-content: center;
             align-content: center;
             margin: 30px auto auto auto;
         }
+
         h1 {
             display: flex;
             justify-content: center;
@@ -22,11 +23,13 @@ declare(strict_types=1);
             color: white;
             padding: 50px;
         }
+
         h2 {
             display: flex;
             justify-content: center;
         }
-        b{
+
+        b {
 
         }
     </style>
@@ -36,8 +39,8 @@ declare(strict_types=1);
 <div class="converter">
     <form action="index.php" method="post">
         <label for="search"></label> </br>
-        <b> Amount  </b> <input type="text" name="input" id="search" placeholder="Enter amount"/>
-        <b> Currency  </b><select name="dropdown" id="currencyList">
+        <b> Amount </b> <input type="text" name="input" id="search" placeholder="Enter amount"/>
+        <b> Currency </b><select name="dropdown" id="currencyList">
             <option value="USD" selected="selected" label="US dollar">USD</option>
             <option value="JPY" label="Japanese yen">JPY</option>
             <option value="GBP" label="Pound sterling">GBP</option>
@@ -214,32 +217,27 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
-if(isset($_POST["submit"])) // Check if a variable/form is declared/submitted and is different than null
+if (isset($_POST["submit"])) // Check if a variable/form is declared/submitted and is different than null
 {
     $cc_dropdown = $_POST["dropdown"];
     $cc_input = $_POST["input"];
 
-    if($cc_dropdown == "USD") {
+    if ($cc_dropdown == "USD") {
         $output = $cc_input * 0.84784296;
         echo "<h2> €" . number_format($output) . "</h2>";
-    }
-    else if ($cc_dropdown == "JPY")  {
-            $output = $cc_input * 0.007697308;
-            echo "<h2> €" . number_format($output) . "</h2>";
-    }
-    else if ($cc_dropdown == "GBP")  {
+    } else if ($cc_dropdown == "JPY") {
+        $output = $cc_input * 0.007697308;
+        echo "<h2> €" . number_format($output) . "</h2>";
+    } else if ($cc_dropdown == "GBP") {
         $output = $cc_input * 1.1756453;
         echo "<h2> €" . number_format($output) . "</h2>";
-    }
-    else if ($cc_dropdown == "AED")  {
+    } else if ($cc_dropdown == "AED") {
         $output = $cc_input * 0.2309799;
         echo "<h2> €" . number_format($output) . "</h2>";
-    }
-    else if ($cc_dropdown == "AFN")  {
+    } else if ($cc_dropdown == "AFN") {
         $output = $cc_input * 0.2309799;
         echo "<h2> €" . number_format($output) . "</h2>";
-    }
-    else {
+    } else {
         echo "FAIL";
     }
 }
