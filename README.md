@@ -2,6 +2,8 @@
 
 Watch the result of this project >> [here](https://the-dream-1.herokuapp.com/)
 
+![the-dream](https://user-images.githubusercontent.com/84382812/142245577-cf467c56-500d-49aa-a0aa-204b13cf76d0.JPG)
+
 ## 🎯 Objectives
 - Create a currency converter
 
